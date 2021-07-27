@@ -4,10 +4,10 @@
 const os = require("os");
 const tasklist = require("tasklist");
 const wmic = require("wmic-js");
-const shell = require("shelljs");
-const open = require("fs/promises").open;
-const pressAnyKey = require("./pressAnyKey");
+
 const process = require("process");
+const pressAnyKey = require("./pressAnyKey");
+const runBatFile = require("./runBatFile");
 
 if (os.platform() !== "win32") {
   throw Error("Only windows is supported");
@@ -34,20 +34,10 @@ async function killProcess(process) {
 async function startTalon() {
   const talonHome = "C:\\Program Files\\Talon";
   const batContent = `@echo off\nstart /d "${talonHome}" talon.exe`;
-  const batFile = `${os.tmpdir()}\\talon_start.bat`;
-  let filehandle;
   try {
-    filehandle = await open(batFile, "w");
-    await filehandle.writeFile(batContent);
-
-    const { code, stderr } = shell.exec(batFile);
-    if (code !== 0) {
-      throw Error(stderr);
-    }
+    await runBatFile(batContent);
   } catch (e) {
     throw Error("Can't start Talon: " + e);
-  } finally {
-    await filehandle?.close();
   }
 }
 
