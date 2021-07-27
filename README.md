@@ -20,3 +20,6 @@ talon restart:
 ## Requirements
 * Only supports windows
 * Talon must be installed at `C:\Program Files\Talon`
+
+## Disclaimer
+You shouldn't need to restart Talon and if you have problems please file an [issue](https://github.com/talonvoice/talon/issues). This application is only useful for very few people with specific circumstances.
