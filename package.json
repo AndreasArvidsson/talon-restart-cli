@@ -1,0 +1,32 @@
+{
+    "name": "talon-restart-cli",
+    "version": "1.0.0",
+    "description": "Restart cli utility for Talon Voice",
+    "files": [
+        "index.js"
+    ],
+    "bin": {
+        "talon-restart": "index.js"
+    },
+    "keywords": [
+        "talon",
+        "voice",
+        "cli"
+    ],
+    "author": "Andreas Arvidsson",
+    "license": "MIT",
+    "homepage": "https://github.com/AndreasArvidsson/talon-restart-cli",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AndreasArvidsson/talon-restart-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/AndreasArvidsson/talon-restart-cli/issues"
+    },
+    "scripts": {},
+    "dependencies": {
+        "tasklist": "^4.0.1",
+        "wmic-js": "^0.0.3",
+        "shelljs": "^0.8.4"
+    }
+}
