@@ -23,10 +23,15 @@
     "bugs": {
         "url": "https://github.com/AndreasArvidsson/talon-restart-cli/issues"
     },
-    "scripts": {},
+    "scripts": {
+        "pub": "node node_modules/publish-flatten --flatten src --strip scripts --strip devDependencies"
+    },
     "dependencies": {
         "tasklist": "^4.0.1",
         "wmic-js": "^0.0.3",
         "shelljs": "^0.8.4"
+    },
+    "devDependencies": {
+        "publish-flatten": "^1.0.3"
     }
 }
