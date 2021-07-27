@@ -6,6 +6,8 @@ const tasklist = require("tasklist");
 const wmic = require("wmic-js");
 const shell = require("shelljs");
 const open = require("fs/promises").open;
+const pressAnyKey = require("./pressAnyKey");
+const process = require("process");
 
 if (os.platform() !== "win32") {
   throw Error("Only windows is supported");
@@ -57,5 +59,7 @@ async function startTalon() {
     console.log("Talon restarted");
   } catch (e) {
     console.error(e);
+    await pressAnyKey();
+    process.exit(0);
   }
 })();

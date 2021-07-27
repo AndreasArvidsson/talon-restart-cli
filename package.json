@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "Restart cli utility for Talon Voice",
     "files": [
-        "index.js"
+        "src/*"
     ],
     "bin": {
-        "talon-restart": "index.js"
+        "talon-restart": "src/index.js"
     },
     "keywords": [
         "talon",
